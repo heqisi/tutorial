@@ -1,0 +1,12 @@
+首页URL:
+http://localhost:8080/TomcatTest/test.jsp
+
+servlet:
+http://localhost:8080/TomcatTest/HelloServlet
+
+Q:javax.servlet包加载不了
+A:右键点击你的工程，弹出属性设置列表：Build Path->Add Libraries...
+，弹出添加类库对话框，
+选择Server Runtime，点击Next按钮，
+选择web服务器(前提是配置了Web服务器，例如Tomcat)，
+点击Finish即可。

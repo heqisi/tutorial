@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true"> 
+  <!-- 第一个servlet -开始位置-->     
+    <servlet>
+        <servlet-name>HelloJava</servlet-name>
+        <servlet-class>com.test.HelloJava</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloJava</servlet-name>
+        <url-pattern>/Test/HelloJava</url-pattern>
+    </servlet-mapping>
+    <!-- 访问路径：http://localhost:8080/TomcatTest/Test/HelloJava -->
+    <!-- 第一个servlet -结束位置-->
+    <!-- 第2个servlet -开始位置-->     
+    <servlet>
+        <servlet-name>TestInit</servlet-name>
+        <servlet-class>com.test.TestInit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestInit</servlet-name>
+        <url-pattern>/Test/TestInit</url-pattern>
+    </servlet-mapping>
+    <!-- 访问路径：http://localhost:8080/TomcatTest/Test/TestInit -->
+    <!-- 第2个servlet -结束位置-->
+    <!-- 第三个  -->
+    <!-- http://localhost:8080/TomcatTest/HelloForm?name=菜鸟教程&url=www.runoob.com -->
+    <servlet>
+    <servlet-name>HelloForm</servlet-name>
+    <servlet-class>com.test.HelloForm</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    <servlet-name>HelloForm</servlet-name>
+    <url-pattern>/HelloForm</url-pattern>
+  	</servlet-mapping>
+  	<!-- 上面的是get，这个是post -->
+  	<servlet>
+    <servlet-name>HelloForm2</servlet-name>
+    <servlet-class>com.test.HelloForm2</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    <servlet-name>HelloForm2</servlet-name>
+    <url-pattern>/HelloForm2</url-pattern>
+  	</servlet-mapping>
+  	<!-- 复选框的servlet -->
+  	<servlet>
+    <servlet-name>CheckBox</servlet-name>
+    <servlet-class>com.test.CheckBox</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckBox</servlet-name>
+    <url-pattern>/CheckBox</url-pattern>
+  </servlet-mapping>
+  <!-- 读取所有的表单参数的servlet -->
+  	<servlet>
+    <servlet-name>ReadParams</servlet-name>
+    <servlet-class>com.test.ReadParams</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadParams</servlet-name>
+    <url-pattern>/ReadParams</url-pattern>
+  </servlet-mapping>
+  <!-- 为displayheader写过滤器 -->
+  <filter>
+  <filter-name>LogFilter</filter-name>
+  <filter-class>com.test.LogFilter</filter-class>
+  <init-param>
+    <param-name>Site</param-name>
+    <param-value>菜鸟教程</param-value>
+  </init-param>
+  </filter>
+  <filter-mapping>
+  <filter-name>LogFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+   <servlet> 
+    <!-- http://localhost:8080/TomcatTest/DisplayHeader --> 
+    <!-- 类名 -->  
+    <servlet-name>DisplayHeader</servlet-name>  
+    <!-- 所在的包 -->  
+    <servlet-class>com.test.DisplayHeader</servlet-class>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>DisplayHeader</servlet-name>  
+    <!-- 访问的网址 -->  
+    <url-pattern>/DisplayHeader</url-pattern>  
+  </servlet-mapping> 
+  <servlet>  
+   <!-- http://localhost:8080/TomcatTest/Refresh --> 
+   <!-- chrome打不开，firefox可以打开 -->
+     <!-- 类名 -->  
+    <servlet-name>Refresh</servlet-name>  
+    <!-- 所在的包 -->  
+    <servlet-class>com.test.Refresh</servlet-class>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>Refresh</servlet-name>  
+    <!-- 访问的网址 -->  
+    <url-pattern>/Refresh</url-pattern>  
+    </servlet-mapping> 
+    <servlet>  
+   <!-- http://localhost:8080/TomcatTest/ShowError --> 
+     <!-- 类名 -->  
+    <servlet-name>ShowError</servlet-name>  
+    <!-- 所在的包 -->  
+    <servlet-class>com.test.ShowError</servlet-class>  
+ 	 </servlet>  
+  	<servlet-mapping>  
+    <servlet-name>ShowError</servlet-name>  
+    <!-- 访问的网址 -->  
+    <url-pattern>/ShowError</url-pattern>  
+    </servlet-mapping>
+    <!-- 演示setcookie方法 -->
+    <!-- 网页原址:http://www.runoob.com/servlet/servlet-cookies-handling.html -->
+    <!-- http://localhost:8080/TomcatTest/setcookie.html -->
+    <servlet> 
+    <!-- 类名 -->  
+    <servlet-name>SetCookie</servlet-name>
+    <!-- 所在的包 -->
+    <servlet-class>com.test.SetCookie</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>SetCookie</servlet-name>
+    <!-- 访问的网址 -->
+    <url-pattern>/SetCookie</url-pattern>
+    </servlet-mapping> 
+    <!-- http://localhost:8080/TomcatTest/readcookies --> 
+    <!-- 读取cookie --> 
+    <servlet> 
+    <!-- 类名 -->  
+    <servlet-name>ReadCookies</servlet-name>
+    <!-- 所在的包 -->
+    <servlet-class>com.test.ReadCookies</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>ReadCookies</servlet-name>
+    <!-- 访问的网址 -->
+    <url-pattern>/readcookies</url-pattern>
+    </servlet-mapping>
+    <!-- http://localhost:8080/TomcatTest/deletecookies --> 
+    <!-- 删除cookie -->
+    <servlet> 
+    <!-- 类名 -->  
+    <servlet-name>DeleteCookies</servlet-name>
+    <!-- 所在的包 -->
+    <servlet-class>com.test.DeleteCookies</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>DeleteCookies</servlet-name>
+    <!-- 访问的网址 -->
+    <url-pattern>/deletecookies</url-pattern>
+    </servlet-mapping>
+    <!-- 追踪session -->
+    <!-- http://localhost:8080/TomcatTest/sessiontrack --> 
+    <servlet> 
+    <!-- 类名 -->  
+    <servlet-name>SessionTrack</servlet-name>
+    <!-- 所在的包 -->
+    <servlet-class>com.test.SessionTrack</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionTrack</servlet-name>
+    <!-- 访问的网址 -->
+    <url-pattern>/sessiontrack</url-pattern>
+  </servlet-mapping>
+      <!-- 上传文件 -->
+      <!-- http://localhost:8080/TomcatTest/upload.jsp -->
+  <servlet>
+    <display-name>UploadServlet</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.test.UploadServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/UploadServlet</url-pattern>
+   </servlet-mapping>
+   <!-- 当前时间 --> 
+   <!-- http://localhost:8080/TomcatTest/CurrentDate -->
+   <servlet>
+    <servlet-name>CurrentDate</servlet-name>
+    <servlet-class>com.test.CurrentDate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CurrentDate</servlet-name>
+    <url-pattern>/CurrentDate</url-pattern>
+  </servlet-mapping>
+  <!-- 重定向 -->
+  <!-- http://localhost:8080/TomcatTest/PageRedirect -->
+  <servlet>
+     <servlet-name>PageRedirect</servlet-name>
+     <servlet-class>com.test.PageRedirect</servlet-class>
+ </servlet>
+ <servlet-mapping>
+     <servlet-name>PageRedirect</servlet-name>
+     <url-pattern>/PageRedirect</url-pattern>
+ </servlet-mapping>
+ <!-- 点击数 -->
+ <servlet>
+    <servlet-name>PageHitCounter</servlet-name>
+    <servlet-class>com.test.PageHitCounter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PageHitCounter</servlet-name>
+    <url-pattern>/PageHitCounter</url-pattern>
+  </servlet-mapping>
+  <!-- 过滤器，实现访问localhost，控制台打印访问统计 -->
+  <!-- 比如访问 http://localhost:8080/TomcatTest/PageHitCounter -->
+  <filter>
+   <filter-name>SiteHitCounter</filter-name>
+   <filter-class>com.test.SiteHitCounter</filter-class>
+</filter>
+<filter-mapping>
+   <filter-name>SiteHitCounter</filter-name>
+   <url-pattern>/*</url-pattern>
+</filter-mapping>
+</web-app> 
+ 
